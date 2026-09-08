@@ -168,3 +168,40 @@ html, body{
   background-size:cover;
   background-position:center center;
 }
+
+/* ---------- missing chat-bubble fix ----------
+   The "chat" section's two big speech-bubble shapes (rounded box + tail,
+   behind the 정산자/송금자 text) were dropped entirely by the Figma
+   export: the orange one collapsed into an empty, unstyled `.name` div
+   (no size, no image — same failure as the appcard icon above), and the
+   light-blue one on the 송금자 side didn't even leave a placeholder, so
+   one was added in index.html (`.fix-bubble-blue`). Both are cropped
+   directly from the original design screenshot at their exact position,
+   with their text baked in (same pixel-perfect approach as the other
+   fixes above) — so the live text layers underneath are hidden to avoid
+   a duplicate/double-exposure look, exactly like the duplicate-text-layer
+   fix earlier in this file. */
+.fix-bubble-orange{
+  width:431px !important;
+  height:175px !important;
+  left:234px !important;
+  top:214px !important;
+  background-image:url("../images/fix_bubble_orange.png");
+  background-size:cover;
+  background-position:center center;
+  position:absolute;
+}
+.fix-bubble-blue{
+  width:395px;
+  height:174px;
+  left:816px;
+  top:272px;
+  background-image:url("../images/fix_bubble_blue.png");
+  background-size:cover;
+  background-position:center center;
+  position:absolute;
+}
+.v1082_9763, .v1082_9765, .v1082_9819, .v1082_9820,
+.v1082_9764, .v1082_9821{
+  display:none !important;
+}
