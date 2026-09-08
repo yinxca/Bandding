@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ban dding — 매달 반복되는 정산, 반띵</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__logo">
+    <span class="nav__logo-badge">%</span>
+    ban dding
+  </div>
+  <div class="nav__menu" id="navMenu">
+    <button data-target="why">왜 반띵</button>
+    <button data-target="split">어떻게 반띵?</button>
+    <button data-target="features">반띵 하면?</button>
+    <button data-target="cta">함께 반띵!</button>
+    <button data-target="cta">반띵 시작하기</button>
+  </div>
+  <button class="nav__cta" data-target="hero">알림 받기</button>
+</nav>
+
+<div class="dots" id="dots"></div>
+
+<div class="snap-wrap" id="snapWrap">
+
+  <!-- 1. HERO -->
+  <section class="panel panel--cream" id="hero">
+    <div class="panel-inner hero">
+      <div class="hero__copy">
+        <div class="hero__badge"><span class="ic">%</span>매달 함께 내는 비용을 위한 반띵</div>
+        <h1>매달 <em>반복되는</em> 정산,<br>서로 챙기지 않아도 <em>자연스럽게</em> 끝나도록</h1>
+        <p class="sub">월세처럼 정해진 비용부터, 매달 달라지는 공과금까지.<br>반띵이 이번달 금액에 맞춰 나눠주고, 정산을 챙겨드려요.</p>
+        <form class="hero__form" id="heroForm">
+          <input type="email" required placeholder="이메일을 적어주세요">
+          <button type="submit">알림받기</button>
+        </form>
+        <div class="hero__form-msg" id="heroMsg"></div>
+      </div>
+      <div class="hero__visual">
+        <div class="phone-mock">
+          <div class="phone-mock__glow"></div>
+          <img class="frame" src="images/phone-frame.png" alt="반띵 앱 화면 목업">
+          <img class="phone-mock__screen-icon" src="images/toast-icon.png" alt="반띵 로고 아이콘">
+        </div>
+        <div class="hero__float-card c1"><span class="dot"></span>정산 요청 완료</div>
+        <div class="hero__float-card c2"><span class="dot"></span>63,200원 송금됨</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. WHY -->
+  <section class="panel panel--cream2" id="why">
+    <span class="why__bg-icon" style="top:14%;left:8%;">💧</span>
+    <span class="why__bg-icon" style="top:20%;left:44%;">🧺</span>
+    <span class="why__bg-icon" style="top:16%;right:10%;">⚡</span>
+    <span class="why__bg-icon" style="bottom:14%;left:44%;">⚡</span>
+    <span class="why__bg-icon" style="bottom:18%;right:14%;">🧺</span>
+    <div class="panel-inner why">
+      <div class="why__list">
+        <div class="why__row">
+          <div class="label"><span class="dot"></span>확인&amp;계산</div>
+          <div class="bubble">이번엔 얼마씩 나눠야 하지?</div>
+        </div>
+        <div class="why__row is-main">
+          <div class="label"><span class="dot"></span>정산 요청</div>
+          <div class="bubble">이번 달은 47,980원 보내줘</div>
+        </div>
+        <div class="why__row">
+          <div class="label"><span class="dot"></span>송금 확인</div>
+          <div class="bubble">다 보냈나?</div>
+        </div>
+        <div class="why__row">
+          <div class="label"><span class="dot"></span>다시 요청</div>
+          <div class="bubble">아직 안 보냈네...</div>
+        </div>
+      </div>
+      <div class="why__headline">매달 반복되는 비용,<br>왜 정산은 <em>매번 처음부터</em> 해야 할까?</div>
+    </div>
+  </section>
+
+  <!-- 3. CHAT -->
+  <section class="panel panel--dark" id="chat">
+    <div class="chat">
+      <div class="chat__stage">
+        <img class="chat__mascot bear" src="images/mascot-bear.png" alt="정산자 캐릭터">
+        <img class="chat__mascot cat" src="images/mascot-cat.png" alt="송금자 캐릭터">
+        <div class="chat__bubble left"><span class="who">정산자</span>아직 안보냈는데<br>다시 보내달라고 요청해야겠지..?</div>
+        <div class="chat__bubble right"><span class="who">송금자</span>아 맞다, 보내려고 했는데...<br>또 깜빡했네</div>
+        <div class="chat__receipt">
+          <small>전기료</small><small>수도세</small>
+          <div class="label">정산 요청</div>
+          <div class="amount">₩ 75,800</div>
+        </div>
+        <span class="chat__tag o" style="left:2%;top:2%;transform:rotate(-8deg);">지침</span>
+        <span class="chat__tag o" style="left:0;top:78%;transform:rotate(-6deg);">기다림</span>
+        <span class="chat__tag o" style="left:14%;bottom:0;transform:rotate(4deg);">다시 말하기 부담</span>
+        <span class="chat__tag b" style="right:2%;top:0;transform:rotate(6deg);">귀찮음</span>
+        <span class="chat__tag b" style="right:0;top:76%;transform:rotate(-4deg);">미룸</span>
+        <span class="chat__tag b" style="right:12%;bottom:-4%;transform:rotate(4deg);">깜빡함</span>
+        <span class="chat__tag b" style="right:26%;bottom:2%;transform:rotate(8deg);">미안함</span>
+      </div>
+      <div class="chat__headline">( 한쪽은 <em>다시 말하기가 부담</em>스럽고,<br>한쪽은 미루다 <b>깜빡하고 미안해졌어요</b> )</div>
+    </div>
+  </section>
+
+  <!-- 4. SPOTLIGHT -->
+  <section class="panel panel--dark" id="spot">
+    <div class="spot">
+      <div class="spot__cone"></div>
+      <div class="spot__headline">재촉하지 않고,<br>까먹지 않고도</div>
+      <div class="spot__stage">
+        <div class="spot__bubble">정산을</div>
+        <img class="spot__icon" src="images/appicon-bear.png" alt="반띵 아이콘과 캐릭터">
+        <div class="spot__bubble">끝낼 수 있어요</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SPLIT CARD -->
+  <section class="panel panel--cream2" id="split">
+    <div class="split__word">ban dding</div>
+    <div class="panel-inner split">
+      <div class="split__side left">매번 확인하고,</div>
+      <div class="split__stage">
+        <div class="split__bubble">매달 달라지는 금액도 걱정 없어요</div>
+        <img class="split__bear" src="images/bear-peek.png" alt="반띵 캐릭터">
+        <div class="split__card">
+          <div class="split__card-top">
+            <b>1건 총 금액 126,400원</b>
+            <span><span class="split__pill">반띵</span><span class="split__pill">랜덤</span></span>
+          </div>
+          <div class="split__row">
+            <span class="split__avatar" style="background:#f2b8c6;">수</span>
+            <span class="name">수횬&lt;3</span>
+            <span class="amt">63,200원</span>
+          </div>
+          <div class="split__row">
+            <span class="split__avatar" style="background:#f0b25a;">찌</span>
+            <span class="name">찌니</span>
+            <span class="amt">63,200원</span>
+          </div>
+          <button class="split__cta">1건 정산하기</button>
+        </div>
+      </div>
+      <div class="split__side right">계산하지 않도록</div>
+    </div>
+  </section>
+
+  <!-- 6. REMIND BLANK -->
+  <section class="panel panel--dark" id="remind">
+    <div class="panel-inner remind">
+      <div class="remind__left">
+        <div class="remind__bell">🔔</div>
+        <div class="remind__msg">혹시 이번 달 비용 아직 안 보냈어..?</div>
+        <div class="remind__msg">오늘까지 보내줄 수 있어..?</div>
+      </div>
+      <div class="remind__right">
+        <div class="remind__headline">깜빡한 정산,<br>내가 말하기 전에</div>
+        <div class="remind__stack">
+          <div class="remind__tip">아직 보내지 않은 멤버에게 먼저 알려줬어요!</div>
+          <div class="remind__card"></div>
+          <div class="remind__card"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. SCHEDULE -->
+  <section class="panel panel--dark" id="sched">
+    <span class="sched__quote" style="top:12%;left:4%;">친구한테 미안해서 어쩌지..</span>
+    <span class="sched__quote" style="top:14%;right:4%;">아 또 깜빡하고 안 보냈네..</span>
+    <span class="sched__quote" style="bottom:16%;left:2%;">정산 일이 며칠이었더라..?</span>
+    <span class="sched__quote" style="bottom:18%;right:2%;">내가 이걸 보냈는지 기억이 안 나..ㅠ</span>
+    <div class="sched">
+      <div class="sched__headline"><span>잊어버린 정산,</span><span>다시 떠올릴 수 있게</span></div>
+      <div class="sched__stage">
+        <div class="sched__bubble-row">
+          <span class="a">반띵이 기억하고,</span>
+          <span class="b">알아서 챙길게요!</span>
+        </div>
+        <img class="sched__bear" src="images/bear-peek.png" alt="반띵 캐릭터">
+      </div>
+      <div class="sched__cards">
+        <div class="sched__card">
+          <h4>9월 자동 정산</h4>
+          <ul>
+            <li>9/7 <b>Netflix</b></li>
+            <li>9/12 <b>공과금</b></li>
+            <li>9/17 <b>Adobe</b></li>
+          </ul>
+        </div>
+        <div class="sched__card blank">자동 충전?<br>정산 완료?<br>모바일 화면</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. BRAND -->
+  <section class="panel panel--cream2" id="brand">
+    <div class="brand">
+      <div class="brand__pills">
+        <span class="p1">정산은 가볍게,</span>
+        <span class="p2">우리사이는 편하게.</span>
+      </div>
+      <div class="brand__word">ban dding</div>
+      <div class="brand__deco">
+        <i class="d1"></i><i class="d2"></i><i class="d3">%</i><i class="d4">🔥</i>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FEATURES -->
+  <section class="panel panel--cream" id="features">
+    <div class="feat">
+      <div class="feat__tag">for Business</div>
+      <div class="feat__grid">
+        <div class="feat__card">
+          <img src="images/feature-icon1.png" alt="공과금 자동 분배 아이콘">
+          <h4>매달 달라도 자동으로 나누기</h4>
+          <p>전기·수도·가스처럼 달라지는 비용을<br>입주자별 기준에 맞춰 나눠요.</p>
+        </div>
+        <div class="feat__card">
+          <img src="images/feature-icon2.png" alt="입금 현황 아이콘">
+          <h4>입금 현황 한눈에 보기</h4>
+          <p>누가 냈고, 누가 남았는지<br>사람마다 확인하지 않아도 돼요.</p>
+        </div>
+        <div class="feat__card">
+          <img src="images/feature-icon3.png" alt="미정산 알림 아이콘">
+          <h4>미정산도 자동으로 알림발송</h4>
+          <p>아직 끝나지 않은 정산은<br>반띵이 필요한 시점에 다시 알려요.</p>
+        </div>
+      </div>
+      <div class="feat__foot">
+        <div class="l">함께하는 사람이<br>많아질수록,</div>
+        <div class="r">반복되는 비용<br>관리는 더 복잡해지니까</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CTA -->
+  <section class="panel panel--dark" id="cta">
+    <div class="cta__pattern"></div>
+    <div class="cta__lead">함께하는 사람이 많아질수록, 반복되는 비용 관리는 더 복잡해지니까</div>
+    <div class="cta__headline">다음 달 정산, <em>반띵!</em> 해볼까요?</div>
+    <img class="cta__blobs" src="images/cta-blobs.png" alt="반띵 캐릭터들">
+    <form id="ctaForm">
+      <button class="cta__btn" type="submit">사전 신청하기</button>
+    </form>
+    <div class="cta__form-msg" id="ctaMsg"></div>
+  </section>
+
+  <!-- 11. FOOTER -->
+  <section class="panel panel--white" id="footer">
+    <div class="footer">
+      <div class="footer__brand">ban dding
+        <span class="sub">매달 반복되는 정산, 반띵이 자연스럽게 끝내드려요.</span>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h5>SERVICE</h5>
+          <a href="#hero">왜 반띵</a>
+          <a href="#split">어떻게 반띵</a>
+          <a href="#features">반띵 하면</a>
+        </div>
+        <div class="footer__col">
+          <h5>COMPANY</h5>
+          <a href="#">회사 소개</a>
+          <a href="#">문의하기</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">© ban dding. All rights reserved.</div>
+  </section>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
