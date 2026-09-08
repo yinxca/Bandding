@@ -81,8 +81,8 @@ html, body{
 /* these DO have an intentional 2-line break (now marked with <br> in
    the HTML instead of a raw newline, since normal white-space collapses
    a raw newline into a space) — keep them wrapping normally. */
-.v1082_9780, .v1082_9782, .v1082_10068, .v1082_10077, .v1082_10097,
-.v1082_9845, .v1082_9763, .v1082_9819, .v1082_10031, .v1082_10111, .v1082_10112{
+.v1082_9780, .v1082_10068, .v1082_10097,
+.v1082_9845, .v1082_9763, .v1082_9819, .v1082_10111, .v1082_10112{
   white-space:normal;
 }
 
@@ -95,7 +95,6 @@ html, body{
    widened by just enough to fit on one line (plus a small buffer) and
    re-centered so its visual midpoint doesn't shift — position/size of
    every surrounding element is untouched. */
-.v1082_10236{ width:116px !important; left:30px !important; white-space:nowrap; }
 .v1082_9684{ width:250px !important; left:15px !important; white-space:nowrap; }
 .v1082_9686{ width:90px !important; left:22px !important; white-space:nowrap; }
 .v1082_9688{ width:135px !important; left:20px !important; white-space:nowrap; }
@@ -108,12 +107,11 @@ html, body{
 .v1082_10009{ width:326px !important; left:1043px !important; white-space:nowrap; }
 .v1082_10179{ width:230px !important; left:15px !important; white-space:nowrap; }
 .v1082_10113{ width:122px !important; left:659px !important; white-space:nowrap; }
+.v1082_9997{ width:293px !important; left:239px !important; white-space:nowrap; }
+.v1082_9998{ width:378px !important; left:243px !important; white-space:nowrap; }
 .v1082_9970{ width:197px !important; left:53px !important; white-space:nowrap; }
 .v1082_9976{ width:115px !important; left:51px !important; white-space:nowrap; }
 .v1082_9945{ width:336px !important; left:30px !important; white-space:nowrap; }
-.v1082_9997{ width:293px !important; left:239px !important; white-space:nowrap; }
-.v1082_9998{ width:378px !important; left:243px !important; white-space:nowrap; }
-.v1082_10129{ width:91px !important; left:308px !important; white-space:nowrap; }
 
 /* same fix, for 2-line elements (the <br> split above is kept — these
    just needed slightly more room so their individual lines don't wrap
@@ -122,4 +120,51 @@ html, body{
 .v1082_10111{ width:267px !important; left:286px !important; }
 .v1082_10112{ width:372px !important; left:883px !important; }
 .v1082_10068{ width:201px !important; left:621px !important; }
-.v1082_10077{ width:220px !important; left:49px !important; }
+
+/* ---------- duplicate text-layer fix ----------
+   The original Figma export flattened these specific labels into a
+   pre-rendered PNG (with the correct colors/positioning baked in) AND
+   kept the original editable text layer underneath it, unchanged. Where
+   that redundant text layer happens to be sized correctly it's
+   invisible (perfectly overlaps the image), but wherever it doesn't fit
+   its box it wraps/reflows independently of the flat image sitting
+   behind it, producing exactly the garbled "double text" look reported
+   on the chat/appcard/splitcard/cta sections. Since the image is a
+   pixel-perfect copy of the original design, the fix is to hide the
+   redundant live text and let the image (already loading correctly)
+   show through on its own — this also fully replaces the earlier
+   width-based fix attempted for these same elements. */
+.v1082_9800, .v1082_9801, .v1082_9802,   /* baked into v1082_9799.png */
+.v1082_9782,                              /* baked into v1082_9781.png */
+.v1082_10031,                             /* baked into v1082_10030.png */
+.v1082_10077, .v1082_10078,               /* baked into v1082_10075.png */
+.v1082_10126, .v1082_10127, .v1082_10128, .v1082_10129, /* baked into v1082_10125.png */
+.v1082_10236,                             /* baked into v1082_10229.png */
+.v1082_9862,                              /* baked into v1082_9850.png */
+.v1082_9931,                              /* baked into v1082_9930.png */
+.v1082_10022, .v1082_10023, .v1082_10024, .v1082_10025, /* baked into */
+.v1082_10026, .v1082_10027, .v1082_10028, .v1082_10029  /* v1082_10021.png */
+{
+  display:none !important;
+}
+
+/* NOTE: v1082_9945, v1082_9970, v1082_9976 look like the same pattern
+   (a bg-image ancestor a few levels up) but are NOT duplicates — each
+   sits on its own OPAQUE solid-color bubble div that is itself layered
+   in front of that ancestor's image, so the image behind is already
+   invisible and this text is the only thing actually shown. These stay
+   in the width-fix list above, not here. */
+
+/* ---------- missing icon fix ----------
+   The original export dropped a handful of small vector icon layers
+   entirely (they came through as an empty, unstyled `.name` div with no
+   size and no image — most of those are simply invisible and harmless,
+   but this one sits inside a fully-sized, visibly-shaped dark box, so
+   losing it left a blank dark tile where the app icon belongs. Cropped
+   directly from the original design screenshot at this element's exact
+   position. */
+.v1082_9951{
+  background-image:url("../images/v1082_9951_icon.png");
+  background-size:cover;
+  background-position:center center;
+}
