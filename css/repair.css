@@ -81,6 +81,45 @@ html, body{
 /* these DO have an intentional 2-line break (now marked with <br> in
    the HTML instead of a raw newline, since normal white-space collapses
    a raw newline into a space) — keep them wrapping normally. */
-.v1082_9780, .v1082_9782, .v1082_10068, .v1082_10077, .v1082_10097{
+.v1082_9780, .v1082_9782, .v1082_10068, .v1082_10077, .v1082_10097,
+.v1082_9845, .v1082_9763, .v1082_9819, .v1082_10031, .v1082_10111, .v1082_10112{
   white-space:normal;
 }
+
+/* ---------- single-line label text-overflow fix ----------
+   Verified live against the deployed site with the real Pretendard font:
+   these text boxes are a few pixels narrower than the text they hold
+   (the original export measured them against a slightly different font
+   render), so the browser was wrapping them to 2 lines and clipping
+   them inside their fixed-height pill/label backgrounds. Each one is
+   widened by just enough to fit on one line (plus a small buffer) and
+   re-centered so its visual midpoint doesn't shift — position/size of
+   every surrounding element is untouched. */
+.v1082_10236{ width:116px !important; left:30px !important; white-space:nowrap; }
+.v1082_9684{ width:250px !important; left:15px !important; white-space:nowrap; }
+.v1082_9686{ width:90px !important; left:22px !important; white-space:nowrap; }
+.v1082_9688{ width:135px !important; left:20px !important; white-space:nowrap; }
+.v1082_9690{ width:220px !important; left:19px !important; white-space:nowrap; }
+.v1082_9949{ width:230px !important; left:605px !important; white-space:nowrap; }
+.v1082_9950{ width:220px !important; left:610px !important; white-space:nowrap; }
+.v1082_9940{ width:295px !important; left:121px !important; white-space:nowrap; }
+.v1082_9941{ width:325px !important; left:1012px !important; white-space:nowrap; }
+.v1082_10008{ width:246px !important; left:133px !important; white-space:nowrap; }
+.v1082_10009{ width:326px !important; left:1043px !important; white-space:nowrap; }
+.v1082_10179{ width:230px !important; left:15px !important; white-space:nowrap; }
+.v1082_10113{ width:122px !important; left:659px !important; white-space:nowrap; }
+.v1082_9970{ width:197px !important; left:53px !important; white-space:nowrap; }
+.v1082_9976{ width:115px !important; left:51px !important; white-space:nowrap; }
+.v1082_9945{ width:336px !important; left:30px !important; white-space:nowrap; }
+.v1082_9997{ width:293px !important; left:239px !important; white-space:nowrap; }
+.v1082_9998{ width:378px !important; left:243px !important; white-space:nowrap; }
+.v1082_10129{ width:91px !important; left:308px !important; white-space:nowrap; }
+
+/* same fix, for 2-line elements (the <br> split above is kept — these
+   just needed slightly more room so their individual lines don't wrap
+   a 3rd time inside the intended 2 lines). */
+.v1082_9845{ width:375px !important; left:160px !important; }
+.v1082_10111{ width:267px !important; left:286px !important; }
+.v1082_10112{ width:372px !important; left:883px !important; }
+.v1082_10068{ width:201px !important; left:621px !important; }
+.v1082_10077{ width:220px !important; left:49px !important; }
